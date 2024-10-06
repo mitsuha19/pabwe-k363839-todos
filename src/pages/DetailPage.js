@@ -1,10 +1,27 @@
-import { getTodo } from "../utils/data-todos";
-import { useParams } from "react-router-dom";
+import { getTodo, editTodo } from "../utils/data-todos";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 import * as Icon from "react-feather";
 import { formatDate } from "../utils/tools";
 function DetailPage() {
   const params = useParams();
+  const navigate = useNavigate();
   const todo = getTodo(params.id);
+
+  const [title, setTitle] = useState(todo ? todo.title : "");
+  const [description, setDescription] = useState(todo ? todo.description : "");
+
+  const handleSave = () => {
+    editTodo({
+      id: todo.id,
+      title: title,
+      description: description,
+      is_finished: todo.is_finished,
+    });
+
+    navigate(`/`);
+  };
+
   const badgeStatus = todo.is_finished ? (
     <span className="badge bg-success">Selesai</span>
   ) : (
@@ -40,6 +57,31 @@ function DetailPage() {
                 </div>
                 <hr />
                 <p>{todo.description}</p>
+
+                <div className="mt-4">
+                  <h5>Edit Todo</h5>
+                  <div className="form-group">
+                    <label>Title</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group mt-3">
+                    <label>Description</label>
+                    <textarea
+                      className="form-control"
+                      rows="3"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <button className="btn btn-primary mt-3" onClick={handleSave}>
+                    Save Changes
+                  </button>
+                </div>
               </div>
             </div>
           </div>
