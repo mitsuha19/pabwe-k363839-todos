@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import * as Icon from "react-feather";
 import { formatDate } from "../utils/tools";
+//Fungsi edit
 function EditPage() {
   const params = useParams();
   const navigate = useNavigate();
