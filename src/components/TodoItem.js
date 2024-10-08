@@ -65,6 +65,10 @@ function TodoItem({ todo, onDelete, onTodoFinished, isDetail }) {
           {!isDetail ? (
             <div className="d-flex">
               <div className="text-end">
+                <Link to={`/edit/${todo.id}`} className="btn btn-primary">
+                  <Icon.Edit />
+                  <span className="ms-2">Edit</span>
+                </Link>
                 <button
                   onClick={() => {
                     // eslint-disable-next-line no-undef
@@ -111,6 +115,7 @@ TodoItem.propTypes = {
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
   onTodoFinished: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
   isDetail: PropTypes.bool.isRequired,
 };
 export default TodoItem;

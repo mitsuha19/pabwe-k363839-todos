@@ -5,6 +5,7 @@ import HomePageWrapper from "../pages/HomePage";
 import AddPage from "../pages/AddPage";
 import DetailPage from "../pages/DetailPage";
 import NotFoundPage from "../pages/NotFoundPage";
+import EditPage from "../pages/EditPage";
 function TodoApp() {
   const [searchParams, setSearchParams] = useSearchParams();
   const keyword = searchParams.get("keyword")
@@ -19,6 +20,7 @@ function TodoApp() {
       <Routes>
         <Route exact path="/" element={<HomePageWrapper keyword={keyword} />} />
         <Route path="/add" element={<AddPage />} />
+        <Route path="/edit/:id" element={<EditPage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

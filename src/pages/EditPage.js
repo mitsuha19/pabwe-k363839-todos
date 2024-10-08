@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import * as Icon from "react-feather";
 import { formatDate } from "../utils/tools";
-function DetailPage() {
+function EditPage() {
   const params = useParams();
   const navigate = useNavigate();
   const todo = getTodo(params.id);
@@ -57,6 +57,31 @@ function DetailPage() {
                 </div>
                 <hr />
                 <p>{todo.description}</p>
+
+                <div className="mt-4">
+                  <h5>Edit Todo</h5>
+                  <div className="form-group">
+                    <label>Title</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group mt-3">
+                    <label>Description</label>
+                    <textarea
+                      className="form-control"
+                      rows="3"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <button className="btn btn-primary mt-3" onClick={handleSave}>
+                    Save Changes
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -68,4 +93,4 @@ function DetailPage() {
   }
   return resultRender;
 }
-export default DetailPage;
+export default EditPage;
