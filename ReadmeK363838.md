@@ -1,0 +1,1 @@
+Terdapat kesalahan pada saat push fitur edit untuk yang kedua. Kesalahan terjadi pada ketidaksesuaian akun pada akun github desktop, sehingga terdapat akun dengan nama [**Radot-siregar11**](https://github.com/Radot-siregar11) yang tergabung sebagai kontributor dimana seharusnya akun yang melakukan push adalah [**pransdaniel**](https://github.com/pransdaniel).
