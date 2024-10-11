@@ -3,7 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import * as Icon from "react-feather";
 import { formatDate } from "../utils/tools";
-//Fungsi edit
+
+
+//Fungsi edit data todoList
 function EditPage() {
   const params = useParams();
   const navigate = useNavigate();
@@ -28,6 +30,8 @@ function EditPage() {
   ) : (
     <span className="badge bg-warning">Proses</span>
   );
+
+  //Merender hasil perubahan data todoList
   let resultRender;
   if (todo) {
     resultRender = (

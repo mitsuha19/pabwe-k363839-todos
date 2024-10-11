@@ -20,6 +20,8 @@ function TodoApp() {
       <Routes>
         <Route exact path="/" element={<HomePageWrapper keyword={keyword} />} />
         <Route path="/add" element={<AddPage />} />
+
+        {/* Menambahkan path untuk edit todoList */}
         <Route path="/edit/:id" element={<EditPage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
