@@ -24,7 +24,7 @@ class HomePage extends React.Component {
     });
     // eslint-disable-next-line no-undef
     Swal.fire({
-      position: "top-end",
+      position: "center",
       icon: "success",
       title: "Todo berhasil dihapus!",
       showConfirmButton: false,
@@ -45,10 +45,10 @@ class HomePage extends React.Component {
       });
       // eslint-disable-next-line no-undef
       Swal.fire({
-        position: "top-end",
+        position: "center",
         icon: "success",
         // eslint-disable-next-line quotes
-        title: `Berhasil mengubah status todo!`,
+        title: `Todo Berhasil di Update!`,
         showConfirmButton: false,
         timer: 700,
       });
